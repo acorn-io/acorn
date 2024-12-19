@@ -36,6 +36,7 @@ If this model provider hasn't been configured, then the API would return somethi
 ```
 
 To configure a model provider using the API, a `POST` request can be made to `/api/model-providers/azure-openai-model-provider/configure` with each required configuration parameter set in the body:
+
 ```json
 {
 	"OBOT_AZURE_OPENAI_MODEL_PROVIDER_ENDPOINT": "...",
@@ -107,3 +108,10 @@ Voyage is Anthropic's recommended text-embedding provider. The Voyage model prov
 The Ollama model provider requires the configuration parameter `OBOT_OLLAMA_MODEL_PROVIDER_HOST`. This host must point to a running instance of Ollama. For your reference, the default host and port for Ollama is `127.0.0.1:11434`. Obot doesn't set this by default.
 
 To set up and run an instance of Ollama, refer to the [Ollama GitHub readme](https://github.com/ollama/ollama/blob/main/README.md).
+
+## vLLM
+
+The vLLM model provider requires the following configuration parameters:
+
+- `OTTO8_VLLM_MODEL_PROVIDER_ENDPOINT`: The endpoint to use for your vLLM server (e.g., `your-vllm-server.com` or `https://your-vllm-server.com`)
+- `OTTO8_VLLM_MODEL_PROVIDER_API_KEY`: The API key for authentication with your vLLM server

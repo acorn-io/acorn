@@ -1,6 +1,7 @@
 export const CommonModelProviderIds = {
     OLLAMA: "ollama-model-provider",
     GROQ: "groq-model-provider",
+    VLLM: "vllm-model-provider",
     VOYAGE: "voyage-model-provider",
     ANTHROPIC: "anthropic-model-provider",
     OPENAI: "openai-model-provider",
@@ -11,6 +12,7 @@ export const ModelProviderLinks = {
     [CommonModelProviderIds.VOYAGE]: "https://www.voyageai.com/",
     [CommonModelProviderIds.OLLAMA]: "https://ollama.com/",
     [CommonModelProviderIds.GROQ]: "https://groq.com/",
+    [CommonModelProviderIds.VLLM]: "https://docs.vllm.ai/",
     [CommonModelProviderIds.AZURE_OPENAI]:
         "https://azure.microsoft.com/en-us/explore/",
     [CommonModelProviderIds.ANTHROPIC]: "https://www.anthropic.com",
@@ -38,6 +40,11 @@ export const ModelProviderRequiredTooltips: {
     [CommonModelProviderIds.GROQ]: {
         "Api Key":
             "Groq API Key. Can be created and fetched from https://console.groq.com/keys",
+    },
+    [CommonModelProviderIds.VLLM]: {
+        Endpoint:
+            "Endpoint for the vLLM OpenAI service (eg. http://localhost:8000)",
+        "Api Key": "VLLM API Key set when starting the vLLM server",
     },
     [CommonModelProviderIds.AZURE_OPENAI]: {
         Endpoint:
@@ -79,4 +86,8 @@ export const ModelProviderSensitiveFields: Record<string, boolean | undefined> =
 
         // Groq
         OBOT_GROQ_MODEL_PROVIDER_API_KEY: true,
+
+        // VLLM
+        OBOT_VLLM_MODEL_PROVIDER_ENDPOINT: true,
+        OBOT_VLLM_MODEL_PROVIDER_API_KEY: true,
     };
